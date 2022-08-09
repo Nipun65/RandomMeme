@@ -1,0 +1,28 @@
+{
+    "name": "Random Meme",
+    "description": "Random meme from reddit",
+    "version": "0.1",
+    "manifest_version":3,
+    "icons": {
+        "16": "/randmeme.png",
+        "48": "/randmeme.png",
+        "128": "/randmeme.png"
+    },
+    "action":{
+        "default_popup":"memes.html",
+        "default_icon": {
+            "16": "/randmeme.png",
+            "48": "/randmeme.png",
+            "128": "/randmeme.png"
+        }
+    },
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'; script-src-elem 'self' 'unsafe-inline' https://music.yandex.ru/;"
+    },
+    "content_scripts":[
+        {
+            "js":["index.bundle.js"],
+            "matches":["<all_urls>"]
+        }
+    ]
+}
